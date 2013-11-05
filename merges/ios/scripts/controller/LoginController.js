@@ -33,7 +33,7 @@ function LoginController($scope, $routeParams, $location,$rootScope, dataService
 
                 var pushNotification = window.plugins.pushNotification;
 
-                pushNotification.register(notifierService.tokenHandler, null, {"badge":"true", "sound":"true", "alert":"true", "ecb":"angular.element($('.topcoat-notification')).scope().onNotification"});
+                pushNotification.register(notifierService.tokenHandler, function() {}, {"badge":"true", "sound":"true", "alert":"true", "ecb":"angular.element($('.topcoat-notification')).scope().onNotification"});
 
                 $rootScope.$broadcast('loginDone', "loginDone");
                 $location.path('/Leads');
