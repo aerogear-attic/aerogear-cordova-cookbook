@@ -32,7 +32,7 @@ function LoginController($scope, $routeParams, $location,$rootScope, dataService
                 sessionStorage.setItem("access", role);
 
                 var pushNotification = window.plugins.pushNotification;
-                pushNotification.register(fucntion() {}, function(){}, {"senderID":"replace_with_sender_id", "ecb":"angular.element($('.topcoat-notification')).scope().onNotification"});
+                pushNotification.register(function() {}, function(){}, {"senderID":"replace_with_sender_id", "ecb":"angular.element($('.topcoat-notification')).scope().onNotification"});
 
                 $rootScope.$broadcast('loginDone', 'loginDone');
                 $location.path('/Leads');
