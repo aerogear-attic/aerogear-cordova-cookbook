@@ -13,8 +13,9 @@ Example:
 
 		cordova platform add android
 		cordova platform add ios
-		cordova plugin add <location of plugin>
+		cordova plugin add https://github.com/phonegap-build/PushPlugin/
 
+		#changes the push plugin to make android use the same message payload as ios
 		patch -p0 < unified-message.patch
 
 		mv www/config.xml .
