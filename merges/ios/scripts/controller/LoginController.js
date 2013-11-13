@@ -31,13 +31,20 @@ function LoginController($scope, $routeParams, $location,$rootScope, dataService
                 sessionStorage.setItem("username", data.loginName);
                 sessionStorage.setItem("access", role);
 
-                var pushNotification = window.plugins.pushNotification;
+                var config = {
+                    alias: data.loginName,
+                    category: "lead",
+                    badge: "true", sound: "true", alert: "true",
+                    ecb: "angular.element($('.topcoat-notification')).scope().onNotification",
+                    aeroConfig: aeroConfig
+                };
+                push.register(function() {}, function() {}, config);
 
-                pushNotification.register(notifierService.tokenHandler, function() {}, {"badge":"true", "sound":"true", "alert":"true", "ecb":"angular.element($('.topcoat-notification')).scope().onNotification"});
-
-                $rootScope.$broadcast('loginDone', "loginDone");
+                $rootScope.$broadcast('loginDone', 'loginDone');
                 $location.path('/Leads');
                 $scope.$apply();
+
+
             },
             error : function(data) {
 
