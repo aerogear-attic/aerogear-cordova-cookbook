@@ -33,7 +33,7 @@ function LoginController($scope, $routeParams, $location,$rootScope, dataService
 
                 var config = {
                     alias: data.loginName,
-                    category: "lead",
+                    categories: ["lead"],
                     badge: "true", sound: "true", alert: "true",
                     ecb: "angular.element($('.topcoat-notification')).scope().onNotification",
                     aeroConfig: aeroConfig
