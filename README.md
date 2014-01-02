@@ -5,18 +5,14 @@ AeroDoc Cordova
 Clone this repository and do the follwoing:
 
 1. Add cordova platforms
-2. Add PushPlugin
-3. Execute patch to be able to use one message payload for all platforms
-4. Add the aerogear-aerodoc-web to the www directory
+2. Add AeroGear Unified PushPlugin
+3. Add the aerogear-aerodoc-web to the www directory
 
 Example:
 
 		cordova platform add android
 		cordova platform add ios
-		cordova plugin add https://github.com/phonegap-build/PushPlugin/
-
-		#changes the push plugin to make android use the same message payload as ios
-		patch -p0 < unified-message.patch
+		cordova plugin add org.jboss.aerogear.cordova.push
 
 		mv www/config.xml .
 		rm -rf www

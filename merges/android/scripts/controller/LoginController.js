@@ -31,8 +31,14 @@ function LoginController($scope, $routeParams, $location,$rootScope, dataService
                 sessionStorage.setItem("username", data.loginName);
                 sessionStorage.setItem("access", role);
 
-                var pushNotification = window.plugins.pushNotification;
-                pushNotification.register(function() {}, function(){}, {"senderID":"replace_with_sender_id", "ecb":"angular.element($('.topcoat-notification')).scope().onNotification"});
+                var config = {
+                    alias: data.loginName,
+                    categories: ["lead"],
+                    badge: "true", sound: "true", alert: "true",
+                    ecb: "angular.element($('.topcoat-notification')).scope().onNotification",
+                    aeroConfig: aeroConfig
+                };
+                push.register(function() {}, function() {}, config);
 
                 $rootScope.$broadcast('loginDone', 'loginDone');
                 $location.path('/Leads');
