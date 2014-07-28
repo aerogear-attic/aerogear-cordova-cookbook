@@ -18,52 +18,63 @@
 
 function LoginController($scope, $routeParams, $location,$rootScope, dataService, notifierService) {
 
-    var restAuth = dataService.restAuth;
+  var restAuth = dataService.restAuth;
 
-    $scope.login = function() {
-        sessionStorage.removeItem("username");
-        sessionStorage.removeItem("access");
-        var user = $scope.user;
-        restAuth.login(user, {
-            contentType: "application/json",
-            success : function(data) {
-                var role = $.inArray("admin", data.roles) >= 0 ? 1 : 0;
-                sessionStorage.setItem("username", data.loginName);
-                sessionStorage.setItem("access", role);
+  $scope.login = function() {
+    sessionStorage.removeItem("username");
+    sessionStorage.removeItem("access");
+    var user = $scope.user;
+    restAuth.login(user, {
+      contentType: "application/json",
+      success : function(data) {
+        var role = $.inArray("admin", data.roles) >= 0 ? 1 : 0;
+        sessionStorage.setItem("username", data.loginName);
+        sessionStorage.setItem("access", role);
+        setInterval(function() {
+          if ("geolocation" in navigator) {
+            navigator.geolocation.getCurrentPosition(function (pos) {
+              var coordinates = pos.coords;
+              data.latitude = coordinates.latitude;
+              data.longitude = coordinates.longitude;
+              dataService.saleAgentPipe.save(data);
+            });
+          }
+        }, 30000);
 
-                var config = {
-                    alias: data.loginName,
-                    categories: ["lead"],
-                    badge: "true", sound: "true", alert: "true",
-                    ecb: "angular.element($('.topcoat-notification')).scope().onNotification",
-                    aeroConfig: aeroConfig
-                };
-                push.register(function() {}, function() {}, config);
-
-                $rootScope.$broadcast('loginDone', 'loginDone');
-                $location.path('/Leads');
-                $scope.$apply();
-
-
-            },
-            error : function(data) {
-
-            }
+        var config = angular.extend(aeroConfig, {
+          alias: data.loginName,
+          categories: ['lead']
         });
-    };
+        push.register(angular.element($('.topcoat-notification')).scope().onNotification,
+          function() {
+            console.log('registration successful');
+          },
+          function(error) {
+            console.log('registration failed because of ' + error);
+          }, config);
+        $location.path('/Leads');
+        $scope.$apply();
 
-    $scope.logout = function() {
-        sessionStorage.removeItem("username");
-        sessionStorage.removeItem("access");
-        var user = $scope.user;
-        restAuth.logout();
-    };
 
-    $scope.isAdmin = function() {
-        return sessionStorage.getItem("access") == 1;
-    };
+      },
+      error : function(data) {
 
-    $scope.isLoggedIn = function() {
-        return sessionStorage.getItem("username") != undefined;
-    };
+      }
+    });
+  };
+
+  $scope.logout = function() {
+    sessionStorage.removeItem("username");
+    sessionStorage.removeItem("access");
+    var user = $scope.user;
+    restAuth.logout();
+  };
+
+  $scope.isAdmin = function() {
+    return sessionStorage.getItem("access") == 1;
+  };
+
+  $scope.isLoggedIn = function() {
+    return sessionStorage.getItem("username") != undefined;
+  };
 };

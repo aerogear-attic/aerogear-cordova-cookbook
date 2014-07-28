@@ -14,10 +14,8 @@ Example:
 		cordova platform add ios
 		cordova plugin add org.jboss.aerogear.cordova.push
 
-		mv www/config.xml .
 		rm -rf www
 		git clone https://github.com/aerogear/aerogear-aerodoc-web www
-		mv config.xml www
 
 ## Prolog
 Now all that there is left to do is setup the `varaintId` and `secret` in the `app.js` located in the scripts for each platform be sure to edit the one in merges!
