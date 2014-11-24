@@ -1,12 +1,21 @@
-<img src="{{image}}" class="preview">
-<div class="tabs tabs-icon-only">
-  <a class="tab-item" ng-click="takePicture()">
-    <i class="icon ion-camera positive"></i>
+<div class="bottom-action-bar">
+  <a href="#" class="select-camera-roll" ng-click="openLibrary()" ng-hide="image">
+    <img src="img/pic.png" alt="pic">
   </a>
-  <a class="tab-item" ng-click="openLibrary()">
-    <i class="icon ion-plus positive"></i>
+
+  <a href="#" class="take-picture" ng-click="takePicture()" ng-hide="image">
+     Click!
   </a>
-  <a class="tab-item" ng-click="upload()">
-    <i class="icon ion-ios7-upload-outline positive"></i>
-  </a>
+
+  <ul ng-show="image">
+    <li class="gplus">
+      <a href="#" ng-click="upload('gplus')">gplus</a>
+    </li>
+    <li class="keycloak">
+      <a href="#" ng-click="upload('keycloak')">keycloak</a>
+    </li>
+    <li class="fb">
+      <a href="#" ng-click="upload('facebook')">facebook</a>
+    </li>
+  </ul>
 </div>

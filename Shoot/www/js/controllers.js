@@ -1,8 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('Controller', function ($scope, $ionicActionSheet) {
-  $scope.image = 'img/placeholder.png';
-
+.controller('Controller', function ($scope) {
   $scope.takePicture = function () {
     getPicture(Camera.PictureSourceType.CAMERA);
   };
@@ -11,21 +9,12 @@ angular.module('starter.controllers', [])
     getPicture(Camera.PictureSourceType.PHOTOLIBRARY);
   };
 
-  $scope.upload = function () {
-    var hideSheet = $ionicActionSheet.show({
-      buttons: [
-        {
-          text: 'Facebook'
-        },
-        {
-          text: 'Google'
-        }
-       ],
-      cancelText: 'Cancel',
-      buttonClicked: function (index) {
-        return true;
-      }
-    });
+  $scope.upload = function (action) {
+    switch(action) {
+        case 'facebook':
+        case 'gplus':
+        case 'keycloak':
+    }
   };
 
   function getPicture(sourceType) {
@@ -48,6 +37,6 @@ angular.module('starter.controllers', [])
   }
 
   function onFail(error) {
-    console.log('failure ' + error);
+    alert(error);
   }
 });

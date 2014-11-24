@@ -6,18 +6,126 @@ For example, you might change some of the default colors:
 
 $light:                           #fff !default;
 $stable:                          #f8f8f8 !default;
-$positive:                        #4a87ee !default;
-$calm:                            #43cee6 !default;
-$balanced:                        #66cc33 !default;
-$energized:                       #f0b840 !default;
-$assertive:                       #ef4e3a !default;
-$royal:                           #8a6de9 !default;
+$positive:                        #387ef5 !default;
+$calm:                            #11c1f3 !default;
+$balanced:                        #33cd5f !default;
+$energized:                       #ffc900 !default;
+$assertive:                       #ef473a !default;
+$royal:                           #886aea !default;
 $dark:                            #444 !default;
 */
+
+$fb:               #3b5998;
+$keycloak:        #014e7c;
+$gplus:            #dd4b39;
+$gray:             #ecf0f1;
+$grayDark:         #dcdee0;
+$grayDarker:       #c3c7c9;
+
+
+%clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+.bottom-action-bar{
+  border-top: 1px solid $grayDark;
+  text-align: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 88px;
+  z-index: 99999;
+  text-indent: -99999px;
+  
+  @media (orientation: landscape){
+    top: 0;
+    bottom: 0;
+    left: auto;
+    right: 0;
+    height: 100%;
+    border-top:none;
+    border-left: 1px solid $grayDark;
+  }
+  
+ //SHOOT -------------------------------------------------------- 
+      
+  .take-picture{
+    display: block;
+    background: $gray no-repeat center center url(../../www/img/camera-icon@2x.png);
+    background-size: 56px 61px;
+    height: 88px;
+    @media (orientation: landscape){
+     width: 88px;
+     height: 100%;
+    }
+  }//take pic
+  
+  .select-camera-roll{
+    position: absolute;
+    top: 21px;
+    left: 16px;
+    display: block;
+    border: 1px solid $grayDarker;
+    img{
+      width: 45px;
+      height: 45px;
+      display: block;
+    }
+    
+    @media (orientation: landscape){
+     left: 21px;
+     bottom: 16px;
+     top: auto;
+    }
+    
+  } //select-camera-roll 
+  
+  
+ //SHARE -------------------------------------------------------- 
+  ul{
+    background: blue;
+    @extend %clearfix;
+    @media (orientation: landscape){
+      height: 100%;
+    }
+  }
+  li{
+    float: left;
+    width: 33%;
+    height: 88px;
+    background:  $gplus url(../../../www/img/googleplus-icon@2x.png) no-repeat center center;
+    background-size: 24px 21px;
+    text-indent: -9999999px;
+    &:last-child{width: 34%;}    
+    &.fb{           background: $fb url(../../../www/img/facebook-icon@2x.png) no-repeat center center;background-size: 12px 22px;}
+    &.keycloak{    background: $keycloak url(../../../www/img/keycloak-icon@2x.png) no-repeat center center;background-size: 16px 23px;}
+    
+    a{
+      display: block;
+//      background: red;
+//     height: 100%;
+    }
+    
+    @media (orientation: landscape){
+      float: none;
+      width: 88px;
+      height: 33%;
+      &:last-child{width: auto; height: 34%;}    
+    }
+    
+  }   
+  
+}//btn action
+
 
 // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: "../lib/ionic/fonts" !default;
 
 // Include all of Ionic
-@import "www/lib/ionic/scss/ionic";
+@import "../www/lib/ionic/scss/ionic.scss";
 
