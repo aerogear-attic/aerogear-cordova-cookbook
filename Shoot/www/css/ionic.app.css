@@ -40,7 +40,7 @@ $dark:                            #444 !default;
       border-left: 1px solid #dcdee0; } }
   .bottom-action-bar .take-picture {
     display: block;
-    background: #ecf0f1 no-repeat center center url(../../www/img/camera-icon@2x.png);
+    background: #ecf0f1 no-repeat center center url(../img/camera-icon@2x.png);
     background-size: 56px 61px;
     height: 88px; }
     @media (orientation: landscape) {
@@ -71,16 +71,16 @@ $dark:                            #444 !default;
     float: left;
     width: 33%;
     height: 88px;
-    background: #dd4b39 url(../../../www/img/googleplus-icon@2x.png) no-repeat center center;
+    background: #dd4b39 url(../img/googleplus-icon@2x.png) no-repeat center center;
     background-size: 24px 21px;
     text-indent: -9999999px; }
     .bottom-action-bar li:last-child {
       width: 34%; }
     .bottom-action-bar li.fb {
-      background: #3b5998 url(../../../www/img/facebook-icon@2x.png) no-repeat center center;
+      background: #3b5998 url(../img/facebook-icon@2x.png) no-repeat center center;
       background-size: 12px 22px; }
     .bottom-action-bar li.keycloak {
-      background: #014e7c url(../../../www/img/keycloak-icon@2x.png) no-repeat center center;
+      background: #014e7c url(../img/keycloak-icon@2x.png) no-repeat center center;
       background-size: 16px 23px; }
     .bottom-action-bar li a {
       display: block; }

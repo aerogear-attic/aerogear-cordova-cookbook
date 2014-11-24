@@ -56,7 +56,7 @@ $grayDarker:       #c3c7c9;
       
   .take-picture{
     display: block;
-    background: $gray no-repeat center center url(../../www/img/camera-icon@2x.png);
+    background: $gray no-repeat center center url(../img/camera-icon@2x.png);
     background-size: 56px 61px;
     height: 88px;
     @media (orientation: landscape){
@@ -98,12 +98,12 @@ $grayDarker:       #c3c7c9;
     float: left;
     width: 33%;
     height: 88px;
-    background:  $gplus url(../../../www/img/googleplus-icon@2x.png) no-repeat center center;
+    background:  $gplus url(../img/googleplus-icon@2x.png) no-repeat center center;
     background-size: 24px 21px;
     text-indent: -9999999px;
     &:last-child{width: 34%;}    
-    &.fb{           background: $fb url(../../../www/img/facebook-icon@2x.png) no-repeat center center;background-size: 12px 22px;}
-    &.keycloak{    background: $keycloak url(../../../www/img/keycloak-icon@2x.png) no-repeat center center;background-size: 16px 23px;}
+    &.fb{           background: $fb url(../img/facebook-icon@2x.png) no-repeat center center;background-size: 12px 22px;}
+    &.keycloak{    background: $keycloak url(../img/keycloak-icon@2x.png) no-repeat center center;background-size: 16px 23px;}
     
     a{
       display: block;
