@@ -12,13 +12,21 @@
     <preference name="webviewbounce" value="false" />
     <preference name="UIWebViewBounce" value="false" />
     <preference name="DisallowOverscroll" value="true" />
-
-    <!-- Don't store local date in an iCloud backup. Turn this to "cloud" to enable storage 
-         to be sent to iCloud. Note: enabling this could result in Apple rejecting your app.
-    -->
     <preference name="BackupWebStorage" value="none" />
-
     <feature name="StatusBar">
-      <param name="ios-package" value="CDVStatusBar" onload="true" />
+        <param name="ios-package" onload="true" value="CDVStatusBar" />
+    </feature>
+    <feature name="Camera">
+        <param name="id" value="org.apache.cordova.camera" />
+    </feature>
+    <feature name="File">
+        <param name="id" value="org.apache.cordova.file" />
+    </feature>
+    <feature name="File Transfer">
+        <param name="id" value="org.apache.cordova.file-transfer" />
+    </feature>
+    <feature name="OAuth2">
+        <param name="id" value="org.jboss.aerogear.cordova.oauth2" />
+        <param name="installPath" value="/Users/edewit/workspace/plugins/aerogear-oauth2-plugin" />
     </feature>
 </widget>
