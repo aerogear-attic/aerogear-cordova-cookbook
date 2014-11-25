@@ -1,26 +1,44 @@
 angular.module('starter.services', [])
 
 /**
- * A simple example service that returns some data.
+ * File upload service
  */
-.factory('Friends', function() {
-  // Might use a resource here that returns a JSON array
-
-  // Some fake testing data
-  var friends = [
-    { id: 0, name: 'Scruff McGruff' },
-    { id: 1, name: 'G.I. Joe' },
-    { id: 2, name: 'Miss Frizzle' },
-    { id: 3, name: 'Ash Ketchum' }
-  ];
-
+.factory('file', function($q) {
   return {
-    all: function() {
-      return friends;
-    },
-    get: function(friendId) {
-      // Simple index lookup
-      return friends[friendId];
-    }
+    put: function (url, photo, token) {
+      var deferred = $q.defer();
+
+      var win = function (r) {
+        console.log("Code = " + r.responseCode);
+        console.log("Response = " + r.response);
+        console.log("Sent = " + r.bytesSent);
+
+        deferred.resolve(r);
+      }.bind(this);
+
+      var fail = function (error) {
+        alert("An error has occurred: Code = " + error.code);
+        console.log("upload error source " + error.source);
+        console.log("upload error target " + error.target);
+        deferred.reject(error);
+      };
+
+      var options = new FileUploadOptions();
+      options.fileKey = "file";
+      options.fileName = photo.substr(photo.lastIndexOf('/') + 1);
+      options.mimeType = "image/jpeg";
+
+      var indexOfQuestionMark = options.fileName.indexOf('?');
+
+      options.fileName = indexOfQuestionMark ? options.fileName.slice(indexOfQuestionMark + 1) + '.jpg' : options.fileName;
+
+      options.headers = {
+        'Authorization': 'Bearer ' + token
+      };
+
+      var ft = new FileTransfer();
+      ft.upload(photo, url, win, fail, options);
+      return deferred.promise;
+    }    
   }
 });

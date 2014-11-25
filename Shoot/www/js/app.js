@@ -7,6 +7,23 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
+.run(function ($ionicPlatform) {
+  $ionicPlatform.ready(function () {
+    oauth2.add({
+      base: "https://accounts.google.com",
+      authzEndpoint: "o/oauth2/auth",
+      redirectURL: "com.ionicframework.starter:/oauth2callback",
+      accessTokenEndpoint: "o/oauth2/token",
+      clientId: "517285908032-nnkcrot1727fmd738pug6clbqlgosffs.apps.googleusercontent.com",
+      refreshTokenEndpoint: "o/oauth2/token",
+      revokeTokenEndpoint: "rest/revoke",
+      scopes: 'https://www.googleapis.com/auth/drive',
+      accountId: 'gplus'
+    });
+
+  });
+})
+
 .config(function ($stateProvider, $urlRouterProvider) {
 
   // Ionic uses AngularUI Router which uses the concept of states

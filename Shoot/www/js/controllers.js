@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('Controller', function ($scope) {
+.controller('Controller', function ($scope, file) {
   $scope.takePicture = function () {
     getPicture(Camera.PictureSourceType.CAMERA);
   };
@@ -9,20 +9,24 @@ angular.module('starter.controllers', [])
     getPicture(Camera.PictureSourceType.PHOTOLIBRARY);
   };
 
-  $scope.upload = function (action) {
-    switch(action) {
-        case 'facebook':
-        case 'gplus':
-        case 'keycloak':
-    }
+  $scope.upload = function (type) {
+    oauth2.requestAccess(type)
+      .then(function (token) {
+        file.put('https://www.googleapis.com/upload/drive/v2/files', $scope.image, token)
+          .then(function () {
+            alert('Upload complete');
+          });
+      }, function (error) {
+        alert(error);
+      });
   };
 
   function getPicture(sourceType) {
     navigator.camera.getPicture(onSuccess, onFail, {
       quality: 50,
-      destinationType: Camera.DestinationType.DATA_URL,
+      destinationType: Camera.DestinationType.FILE_URL,
       sourceType: sourceType,
-      allowEdit: true,
+      allowEdit: false,
       encodingType: Camera.EncodingType.JPEG,
       targetWidth: 512,
       targetHeight: 512,
@@ -30,9 +34,9 @@ angular.module('starter.controllers', [])
     });
   }
 
-  function onSuccess(data) {
+  function onSuccess(image) {
     console.log('success');
-    $scope.image = 'data:image/jpeg;base64,' + data;
+    $scope.image = image;
     $scope.$apply();
   }
 
