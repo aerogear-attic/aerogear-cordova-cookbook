@@ -10,17 +10,18 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 .run(function ($ionicPlatform) {
   $ionicPlatform.ready(function () {
     oauth2.add({
-      base: "https://accounts.google.com",
-      authzEndpoint: "o/oauth2/auth",
-      redirectURL: "com.ionicframework.starter:/oauth2callback",
-      accessTokenEndpoint: "o/oauth2/token",
-      clientId: "517285908032-nnkcrot1727fmd738pug6clbqlgosffs.apps.googleusercontent.com",
-      refreshTokenEndpoint: "o/oauth2/token",
-      revokeTokenEndpoint: "rest/revoke",
-      scopes: 'https://www.googleapis.com/auth/drive',
-      accountId: 'gplus'
+      name: 'gplus',
+      settings: {
+        base: "https://accounts.google.com",
+        authzEndpoint: "o/oauth2/auth",
+        redirectURL: "com.ionicframework.starter:/oauth2callback",
+        accessTokenEndpoint: "o/oauth2/token",
+        clientId: "517285908032-nnkcrot1727fmd738pug6clbqlgosffs.apps.googleusercontent.com",
+        refreshTokenEndpoint: "o/oauth2/token",
+        revokeTokenEndpoint: "rest/revoke",
+        scopes: 'https://www.googleapis.com/auth/drive'
+      }
     });
-
   });
 })
 

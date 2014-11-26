@@ -10,15 +10,19 @@ angular.module('starter.controllers', [])
   };
 
   $scope.upload = function (type) {
-    oauth2.requestAccess(type)
-      .then(function (token) {
-        file.put('https://www.googleapis.com/upload/drive/v2/files', $scope.image, token)
-          .then(function () {
-            alert('Upload complete');
-          });
-      }, function (error) {
-        alert(error);
-      });
+    if (type === 'gplus') {
+      oauth2.gplus.requestAccess()
+        .then(function (token) {
+          file.put('https://www.googleapis.com/upload/drive/v2/files', $scope.image, token)
+            .then(function () {
+              alert('Upload complete');
+            });
+        }, function (error) {
+          alert(error);
+        });
+    } else {
+      alert('Not yet supported');
+    }
   };
 
   function getPicture(sourceType) {
