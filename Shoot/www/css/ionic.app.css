@@ -83,7 +83,8 @@ $dark:                            #444 !default;
       background: #014e7c url(../img/keycloak-icon@2x.png) no-repeat center center;
       background-size: 16px 23px; }
     .bottom-action-bar li a {
-      display: block; }
+      display: block;
+      height: 100%; }
     @media (orientation: landscape) {
       .bottom-action-bar li {
         float: none;

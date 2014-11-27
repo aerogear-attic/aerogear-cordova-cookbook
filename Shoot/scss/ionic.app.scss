@@ -16,7 +16,7 @@ $dark:                            #444 !default;
 */
 
 $fb:               #3b5998;
-$keycloak:        #014e7c;
+$keycloak:         #014e7c;
 $gplus:            #dd4b39;
 $gray:             #ecf0f1;
 $grayDark:         #dcdee0;
@@ -107,8 +107,7 @@ $grayDarker:       #c3c7c9;
     
     a{
       display: block;
-//      background: red;
-//     height: 100%;
+      height: 100%;
     }
     
     @media (orientation: landscape){
