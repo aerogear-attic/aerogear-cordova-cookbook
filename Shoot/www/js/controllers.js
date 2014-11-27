@@ -9,16 +9,22 @@ angular.module('starter.controllers', [])
     getPicture(Camera.PictureSourceType.PHOTOLIBRARY);
   };
 
+  var url = {
+    gplus: 'https://www.googleapis.com/upload/drive/v2/files',
+    keycloak: 'http://192.168.0.12:8080/shoot/rest/photos'
+  }
+  
   $scope.upload = function (type) {
-    if (type === 'gplus') {
-      oauth2.gplus.requestAccess()
+    if (type !== 'facebook') {
+      oauth2[type].requestAccess()
         .then(function (token) {
-          file.put('https://www.googleapis.com/upload/drive/v2/files', $scope.image, token)
+          file.put(url[type], $scope.image, token)
             .then(function () {
               alert('Upload complete');
             });
-        }, function (error) {
-          alert(error);
+        }, function (err) {
+          console.log(err);
+          alert(err.error);
         });
     } else {
       alert('Not yet supported');
