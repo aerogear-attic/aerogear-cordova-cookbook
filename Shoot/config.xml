@@ -1,32 +1,42 @@
-<?xml version='1.0' encoding='utf-8'?>
-<widget id="com.ionicframework.starter" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>HelloCordova</name>
-    <description>
-        An Ionic Framework and Cordova project.
-    </description>
-    <author email="hi@ionicframework" href="http://ionicframework.com/">
-      Ionic Framework Team
-    </author>
-    <content src="index.html" />
-    <access origin="*" />
-    <preference name="webviewbounce" value="false" />
-    <preference name="UIWebViewBounce" value="false" />
-    <preference name="DisallowOverscroll" value="true" />
-    <preference name="BackupWebStorage" value="none" />
-    <feature name="StatusBar">
-        <param name="ios-package" onload="true" value="CDVStatusBar" />
-    </feature>
-    <feature name="Camera">
-        <param name="id" value="org.apache.cordova.camera" />
-    </feature>
-    <feature name="File">
-        <param name="id" value="org.apache.cordova.file" />
-    </feature>
-    <feature name="File Transfer">
-        <param name="id" value="org.apache.cordova.file-transfer" />
-    </feature>
-    <feature name="OAuth2">
-        <param name="id" value="org.jboss.aerogear.cordova.oauth2" />
-        <param name="installPath" value="/Users/edewit/workspace/plugins/aerogear-oauth2-plugin" />
-    </feature>
+<?xml version='1.0' encoding='utf-8' ?>
+<widget id="org.jboss.aerogear.cordova" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+  <name>Shoot</name>
+  <description>
+    An example application of how to use the oauth2 cordova plugin
+  </description>
+  <author email="aerogear" href="http://aerogear.org/">
+    AeroGear
+  </author>
+  <content src="index.html" />
+  <access origin="*" />
+  <preference name="webviewbounce" value="false" />
+  <preference name="UIWebViewBounce" value="false" />
+  <preference name="DisallowOverscroll" value="true" />
+  <preference name="BackupWebStorage" value="none" />
+  <feature name="StatusBar">
+    <param name="ios-package" onload="true" value="CDVStatusBar" />
+  </feature>
+  <feature name="Camera">
+    <param name="id" value="org.apache.cordova.camera" />
+  </feature>
+  <feature name="File">
+    <param name="id" value="org.apache.cordova.file" />
+  </feature>
+  <feature name="File Transfer">
+    <param name="id" value="org.apache.cordova.file-transfer" />
+  </feature>
+  <feature name="OAuth2">
+    <param name="id" value="org.jboss.aerogear.cordova.oauth2" />
+  </feature>
+
+  <platform name="ios">
+    <icon src="res/ios/icon-60@2x.png" width="120" height="120" />
+    <icon src="res/ios/icon-60@3x.png" width="180" height="180" />
+    <icon src="res/ios/icon-76.png" width="76" height="76" />
+    <icon src="res/ios/icon-76@2x.png" width="152" height="152" />
+    <icon src="res/ios/icon-Small-40.png" width="40" height="40" />
+    <icon src="res/ios/icon-Small-40@2x.png" width="80" height="80" />
+    <icon src="res/ios/icon-Small.png" width="29" height="29" />
+    <icon src="res/ios/icon-Small@2x.png" width="58" height="58" />
+  </platform>
 </widget>

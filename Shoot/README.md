@@ -1,18 +1,18 @@
-Shoot'nShare
+Shoot 'n Share
 ==============
 You want to shoot cool photos and share them with friends using GoogleDrive.
 With ShootnShare you can take picture, browse your camera roll, pick a picture to share and share it!
-Picture get uploaded to your GoogleDrive.
+Picture get uploaded to your GoogleDrive, keycloak and/or facebook
 
 ## Install
-
-When you start a project with Ionic from scartch please follow the [Getting Started](http://ionicframework.com/getting-started) page.
 
 To use this project as is, first clone the repo from GitHub, then run:
 
 ```bash
-$ cordova plugin add org.apache.cordova.camera
-$ cordova platform add ios
+$ cordova restore plugins --experimental
+$ cordova platform add ios android
 $ cordova build ios
-$ cordova run
+$ cordova run ios
 ``
+
+Then follow the directions printed to tweak the native projects to be able to use the oauth plugin.

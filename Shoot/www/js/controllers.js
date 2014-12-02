@@ -1,13 +1,14 @@
 angular.module('starter.controllers', [])
 
-.controller('Controller', function ($scope, file) {
+.controller('Controller', function ($scope, $ionicPlatform, file) {
   $scope.takePicture = function () {
     getPicture(Camera.PictureSourceType.CAMERA);
   };
-
-  $scope.openLibrary = function () {
-    getPicture(Camera.PictureSourceType.PHOTOLIBRARY);
-  };
+  
+  $ionicPlatform.ready(function () {
+    console.log('starting camera plugin');
+    $scope.takePicture();
+  });
 
   var url = {
     gplus: 'https://www.googleapis.com/upload/drive/v2/files',

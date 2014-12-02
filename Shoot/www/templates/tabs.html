@@ -1,13 +1,8 @@
+<div class="bar bar-header bar-light">
+  <button class="button button-clear icon ion-ios7-arrow-back" ng-click="takePicture()"></button>
+</div>
 <img ng-src="{{image}}" ng-show="image" class="preview">
 <div class="bottom-action-bar">
-  <a href="#" class="select-camera-roll" ng-click="openLibrary()" ng-hide="image">
-    <img src="img/pic.png" alt="pic">
-  </a>
-
-  <a href="#" class="take-picture" ng-click="takePicture()" ng-hide="image">
-     Click!
-  </a>
-
   <ul ng-show="image">
     <li class="gplus">
       <a href="#" ng-click="upload('gplus')">gplus</a>

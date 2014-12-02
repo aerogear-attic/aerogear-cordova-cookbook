@@ -8,3 +8,12 @@
   right: 0;
   width: 100%;
 }
+
+div.bar.bar-light {
+  background-color: transparent;
+  border: none;
+}
+
+body {
+  background-color: black;
+}
