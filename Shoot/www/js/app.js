@@ -25,6 +25,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         realm: "shoot-realm"
       }
     });
+    
+    oauth2.addFacebook({
+      name: 'facebook',
+      settings: {
+        clientId: '1511044619160050',
+        clientSecret: '3b08052d3d96e2120f2c53a36eebd02f',
+        scopes: 'photo_upload, publish_actions'
+      }
+    });
   });
 })
 
