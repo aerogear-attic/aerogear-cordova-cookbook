@@ -51,6 +51,13 @@
   </platform>
   
   <platform name="android">
+    <icon src="res/android/48.png" density="ldpi" />
+    <icon src="res/android/72.png" density="mdpi" />
+    <icon src="res/android/96.png" density="hdpi" />
+    <icon src="res/android/144.png" density="xhdpi" />
+  </platform>
+
+  <platform name="android">
     <!-- you can use any density that exists in the Android project -->
     <splash src="res/screen/android/screen-hdpi-landscape.png" density="land-hdpi" />
     <splash src="res/screen/android/screen-ldpi-landscape.png" density="land-ldpi" />
