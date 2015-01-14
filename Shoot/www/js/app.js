@@ -41,6 +41,13 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   });
 })
 
+.config([
+    '$compileProvider',
+    function ($compileProvider) {
+        $compileProvider.imgSrcSanitizationWhitelist(/^\s*(x-wmapp0|\/\/\/):/);
+    }
+])
+
 .config(function ($stateProvider, $urlRouterProvider) {
 
   // Ionic uses AngularUI Router which uses the concept of states
