@@ -9,10 +9,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
 .run(function ($ionicPlatform) {
   $ionicPlatform.ready(function () {
+    // more info on how to change these have a look at: 
+    //      https://github.com/aerogear/aerogear-oauth2-cordova/blob/master/README.md
     oauth2.addGoogle({
       name: 'gplus',
       settings: {
-        clientId: "517285908032-nnkcrot1727fmd738pug6clbqlgosffs.apps.googleusercontent.com",
+        clientId: '<your clientId e.g. 517285908032-nnkcrot1727fmd738pug6clbqlgosffs.apps.googleusercontent.com>',
         scopes: 'https://www.googleapis.com/auth/drive'
       }
     });
@@ -20,17 +22,19 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     oauth2.addKeycloak({
       name: 'keycloak',
       settings: {
-        base: 'http://192.168.0.12:8080/auth',
+        base: '<location of keycloak server e.g. http://192.168.0.12:8080/auth>',
+        //when you use the shoot and share backend these do not need to change
         clientId: 'shoot-third-party',
-        realm: "shoot-realm"
+        realm: 'shoot-realm'
       }
     });
     
     oauth2.addFacebook({
       name: 'facebook',
       settings: {
-        clientId: '1511044619160050',
-        clientSecret: '3b08052d3d96e2120f2c53a36eebd02f',
+        //On iOS, be sure to also update the <project_name>-Info.plist file with the clientId
+        clientId: '<facebook App ID e.g. 1511044619160050>',
+        clientSecret: '<facebook App Secret e.g. 3b08052d3d96e2120f2c53a36eebd02f>',
         scopes: 'photo_upload, publish_actions'
       }
     });
