@@ -14,7 +14,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     oauth2.addGoogle({
       name: 'gplus',
       settings: {
-        clientId: '<your clientId e.g. 517285908032-nnkcrot1727fmd738pug6clbqlgosffs.apps.googleusercontent.com>',
+        //replace with your own if you want to...
+        clientId: '241956090675-gkeh47arq23mdise57kf3abecte7i5km.apps.googleusercontent.com',
         scopes: 'https://www.googleapis.com/auth/drive'
       }
     });
