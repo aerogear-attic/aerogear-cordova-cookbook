@@ -12,7 +12,7 @@ To use this project as is, first clone the repo from GitHub, then run:
 $ cordova restore plugins --experimental
 $ cordova platform add ios android
 $ cordova prepare ios
-$ open platforms/ios/HelloCordova.xcodeproj/
+$ open platforms/ios/Shoot.xcodeproj/
 ```
 
 Then follow the directions printed to tweak the native projects to be able to use the oauth plugin. See details instruction in [aerogear-oauth2-cordova](https://github.com/aerogear/aerogear-oauth2-cordova/blob/master/README.md#workaround-for-ios).
