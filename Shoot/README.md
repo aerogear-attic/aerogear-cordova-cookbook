@@ -122,3 +122,7 @@ $ open platforms/ios/Shoot.xcodeproj/
 
 #### Android setup
 
+* Open project in Android Studio
+* Apply Android Gradle workaround. See details instruction in [aerogear-oauth2-cordova](https://github.com/aerogear/aerogear-oauth2-cordova/blob/master/README.md#workaround-for-android).
+
+
