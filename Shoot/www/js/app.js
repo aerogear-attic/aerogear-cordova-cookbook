@@ -34,8 +34,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       name: 'facebook',
       settings: {
         //On iOS, be sure to also update the <project_name>-Info.plist file with the clientId
-        clientId: '<facebook App ID e.g. 1511044619160050>',
-        clientSecret: '<facebook App Secret e.g. 3b08052d3d96e2120f2c53a36eebd02f>',
+        clientId: '1694586967434787',
+        clientSecret: '8949eb4c8facf95f3bdab5777861a41f',
         scopes: 'photo_upload, publish_actions'
       }
     });

@@ -93,17 +93,20 @@ To use this project as is, first clone the repo from GitHub, then run:
 ```bash
 $ cordova restore plugins --experimental
 $ cordova platform add ios android
+```
+
+#### iOS setup
+
+```bash
 $ cordova prepare ios
 $ open platforms/ios/Shoot.xcodeproj/
 ```
 
-Then follow the directions printed to tweak the native projects to be able to use the oauth plugin. See details instruction in [aerogear-oauth2-cordova](https://github.com/aerogear/aerogear-oauth2-cordova/blob/master/README.md#workaround-for-ios).
-    
-#### Configure Shoot app cordova client    
+* Apply iOS Swift workaround. See details instruction in [aerogear-oauth2-cordova](https://github.com/aerogear/aerogear-oauth2-cordova/blob/master/README.md#workaround-for-ios).
+* Open `www/js/app.js` and update `clientId` and `clientSecret` with your `App ID` and `App Secret`
+* For `Facebook` also change `fbYYY` to `fb<App ID>` in the Shoot-Info.plist
 
-Open `www/js/app.js` and update `clientId` and `clientSecret` with you `App ID` and `App Secret` and in case of iOS change `fbYYY` to `fb<App ID>` to the <project-name>-Info.plist:
-
-```
+```xml
 <key>CFBundleURLTypes</key>
     <array>
         <dict>
@@ -115,3 +118,7 @@ Open `www/js/app.js` and update `clientId` and `clientSecret` with you `App ID` 
         </dict>
     </array>
 ```
+
+
+#### Android setup
+
