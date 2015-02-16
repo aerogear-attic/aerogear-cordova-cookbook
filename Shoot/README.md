@@ -40,7 +40,7 @@ You will need to create a _consent screen_. Click the blue `Configure consent sc
 
 ![Google Console - Consent screen](docs/google-console-4.png)
 
-Afterwards, click save and you will return to the Client ID. Select `Installed application` and `Other`:
+Afterwards, click save and you will return to the Client ID. Select `Installed application` and `iOS` and fill in your bundleId, these settings will work for Android and iOS:
 
 ![Google Console - Create client ID](docs/google-console-5.png)
 
