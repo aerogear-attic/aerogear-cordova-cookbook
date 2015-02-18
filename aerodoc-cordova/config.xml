@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<widget id="org.aerogear.aerodoc.cordova" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>AeroDoc</name>
+    <description>
+        AeroDoc is an tutorial application to demonstrate how to build an application using Unified Push server.
+    </description>
+    <author email="aerogear-dev@lists.jboss.org" href="http://aerogear.org">
+        AeroGear Team
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <preference name="fullscreen" value="true" />
+    <preference name="webviewbounce" value="true" />
+</widget>
