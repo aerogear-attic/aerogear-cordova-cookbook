@@ -9,17 +9,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
 .run(function ($ionicPlatform) {
   $ionicPlatform.ready(function () {
-    // more info on how to change these have a look at: 
+    // more info on how to change these have a look at:
     //      https://github.com/aerogear/aerogear-oauth2-cordova/blob/master/README.md
     oauth2.addGoogle({
       name: 'gplus',
       settings: {
         //replace with your own if you want to...
-        clientId: '241956090675-gkeh47arq23mdise57kf3abecte7i5km.apps.googleusercontent.com',
+        clientId: '<your client secret goes here.apps.googleusercontent.com>',
         scopes: 'https://www.googleapis.com/auth/drive'
       }
     });
-    
+
     oauth2.addKeycloak({
       name: 'keycloak',
       settings: {
@@ -29,13 +29,13 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         realm: 'shoot-realm'
       }
     });
-    
+
     oauth2.addFacebook({
       name: 'facebook',
       settings: {
         //On iOS, be sure to also update the <project_name>-Info.plist file with the clientId
-        clientId: '1694586967434787',
-        clientSecret: '8949eb4c8facf95f3bdab5777861a41f',
+        clientId: '<your client id goes here>',
+        clientSecret: '<your client secret goes here>',
         scopes: 'photo_upload, publish_actions'
       }
     });
