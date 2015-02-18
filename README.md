@@ -1,9 +1,9 @@
 AeroGear Cordova Cookbook
 =========================
 
-The AeroGear Cordova cookbook is a list of recipes to quick start your AeroGear Cordova experience. 
+The AeroGear Cordova cookbook is a list of recipes to quick start your AeroGear Cordova experience.
 
-Each recipe is a complete app. The goal of the recipes is to show you how easily you can use Cordova AeroGear plugins. The app features are very lean and most of UI is kept to basics in order to focus on AeroGear plugin usage. 
+Each recipe is a complete app. The goal of the recipes is to show you how easily you can use Cordova AeroGear plugins. The app features are very lean and most of UI is kept to basics in order to focus on AeroGear plugin usage.
 
 ## Table of content
 
@@ -11,12 +11,12 @@ Each recipe is a complete app. The goal of the recipes is to show you how easily
 | ------------- |:-------------:| :-----:|:-----:|
 | [Shoot'n Share](Shoot/README.md): Upload file to OAuth2 GoogleDrive | **File Upload** | - | OAuth2 |
 | [AeroDoc](https://github.com/aerogear/aerogear-aerodoc-cordova): Full exemple on how to register, received notification with Java backend | Store, Pipe | **Push** | Login |
-| [HelloWorld](https://github.com/aerogear/aerogear-push-helloworld/cordova): Simple demo of Push registration and notification handles with framework as dependencies | - | **Push** | - |
-| [PushQuickstarts](https://github.com/aerogear/aerogear-push-quickstarts/tree/master/client/cordova): Two complete demos (one using jqm and another with Ionic) of Push notification with server side using UnifiedPush server | - | **Push** | - |
+| [HelloWorld](https://github.com/aerogear/aerogear-push-helloworld/tree/master/cordova): Simple demo of Push registration and notification handles with framework as dependencies | - | **Push** | - |
+| [PushQuickstarts](https://github.com/aerogear/aerogear-push-quickstarts/tree/master/client/contacts-mobile-cordova): Two complete demos (one using jqm and another with Ionic) of Push notification with server side using UnifiedPush server | - | **Push** | - |
 
-Most of the recipes illustrate one main topic which is listed in bold in the table. 
+Most of the recipes illustrate one main topic which is listed in bold in the table.
 
-AeroGear features can be splitted into three main topics: 
+AeroGear features can be splitted into three main topics:
 
 * AeroGear Core: Store, Pipe, Paging, File upload etc...
 * AeroGear Push: APN/GCM push notification, SimplePush
