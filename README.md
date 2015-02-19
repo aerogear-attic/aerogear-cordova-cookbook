@@ -10,7 +10,7 @@ Each recipe is a complete app. The goal of the recipes is to show you how easily
 | Recipe 	| Core 	| Push 	| Security 	|
 | ------------- |:-------------:| :-----:|:-----:|
 | [Shoot'n Share](Shoot/README.md): Upload file to OAuth2 GoogleDrive | **File Upload** | - | OAuth2 |
-| [AeroDoc](./aerogear-aerodoc-cordova): Full exemple on how to register, received notification with Java backend | Store, Pipe | **Push** | Login |
+| [AeroDoc](./aerodoc-cordova): Full exemple on how to register, received notification with Java backend | Store, Pipe | **Push** | Login |
 | [HelloWorld](https://github.com/aerogear/aerogear-push-helloworld/tree/master/cordova): Simple demo of Push registration and notification handles with framework as dependencies | - | **Push** | - |
 | [PushQuickstarts](https://github.com/aerogear/aerogear-push-quickstarts/tree/master/client/contacts-mobile-cordova): Two complete demos (one using jqm and another with Ionic) of Push notification with server side using UnifiedPush server | - | **Push** | - |
 
