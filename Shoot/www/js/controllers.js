@@ -4,7 +4,7 @@ angular.module('starter.controllers', [])
   $scope.takePicture = function () {
     getPicture(Camera.PictureSourceType.CAMERA);
   };
-  
+
   $ionicPlatform.ready(function () {
     console.log('starting camera plugin');
     $scope.takePicture();
@@ -12,7 +12,7 @@ angular.module('starter.controllers', [])
 
   var url = {
     gplus: 'https://www.googleapis.com/upload/drive/v2/files',
-    keycloak: 'http://192.168.0.12:8080/shoot/rest/photos',
+    keycloak: '<location of keycloak server e.g. http://192.168.0.12:8080/shoot/rest/photos>',
     facebook: 'https://graph.facebook.com/me/photos'
   }
 
