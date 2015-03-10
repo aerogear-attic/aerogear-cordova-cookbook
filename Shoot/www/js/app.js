@@ -45,7 +45,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 .config([
     '$compileProvider',
     function ($compileProvider) {
-        $compileProvider.imgSrcSanitizationWhitelist(/^\s*(x-wmapp0|\/\/\/):/);
+        $compileProvider.imgSrcSanitizationWhitelist(/^\s*(file|x-wmapp0|\/\/\/):/);
     }
 ])
 
