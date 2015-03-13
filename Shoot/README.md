@@ -26,9 +26,9 @@ To use this project as is, first clone the repo from GitHub, then run:
 
 ```bash
 $ cordova restore plugins --experimental
-$ cordova platform add ios android
 ```
-**Notes:**
+
+**Notes:** 
 [Cordova restore](http://cordova.apache.org/news/2014/07/10/tools-release.html) is an experimental feature that allows to persist the currently added plugins to config.xml.
 
 If you don't want to use ```cordova restore```, you have to add all plugins manually (it might be required if you want to test the latest version of oauth2 plugin for instance):
@@ -40,10 +40,17 @@ $ cordova plugin add org.apache.cordova.file-transfer
 $ cordova plugin add org.jboss.aerogear.cordova.oauth2
 ```
 
+* Open `www/js/app.js` and update `clientId` and `clientSecret` with your `App ID` and `App Secret`
+
 #### iOS setup
 
-* Open `www/js/app.js` and update `clientId` and `clientSecret` with your `App ID` and `App Secret`
-* For `Facebook` also change `fbYYY` to `fb<App ID>` in the Shoot-Info.plist
+* Add iOS platform
+
+```bash
+$ cordova platform add ios
+```
+
+* Change `fbYYY` to `fb<App ID>` in the Shoot-Info.plist
 
 ```xml
 <key>CFBundleURLTypes</key>
@@ -66,6 +73,14 @@ $ cordova run ios --device
 
 #### Android setup
 
-* Apply Android Gradle workaround. See details instruction in [aerogear-oauth2-cordova](https://github.com/aerogear/aerogear-oauth2-cordova/blob/master/README.md#workaround-for-android).
+* Add Android platform
 
+```bash
+$ cordova platform add android
+```
 
+* Deploy on device:
+
+```bash
+$ cordova run android --device
+```
