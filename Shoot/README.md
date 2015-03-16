@@ -1,12 +1,12 @@
 # Shoot 'n Share
 ---------
-Authors: Erik Jan de Wit (edewit)
-Level: Advanced
-Technologies: Cordova, iOS, Android
-Summary: And example of interacting with several modern web services.
-Target Product: -
-Product Versions: -
-Source: https://github.com/aerogear/aerogear-cordova-cookbook/tree/master/Shoot
+Authors: Erik Jan de Wit (edewit)   
+Level: Advanced   
+Technologies: Cordova, iOS, Android   
+Summary: And example of interacting with several modern web services.   
+Target Product: -   
+Product Versions: -   
+Source: https://github.com/aerogear/aerogear-cordova-cookbook/tree/master/Shoot   
 
 ## What is it?
 
