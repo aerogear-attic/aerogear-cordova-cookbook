@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <title></title>
+
+
+  <!-- compiled css output -->
+  <link href="css/ionic.app.css" rel="stylesheet">
+
+  <!-- ionic/angularjs js -->
+  <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+  <!-- cordova script (this will be a 404 during development) -->
+  <script src="cordova.js"></script>
+
+  <!-- your app's js -->
+  <script src="js/app.js"></script>
+  <script src="js/controller.js"></script>
+</head>
+
+<body ng-app="starter">
+
+  <ion-pane ng-controller="controller">
+    <ion-header-bar class="bar-stable bar-calm">
+      <h1 class="title">AeroGear</h1>
+    </ion-header-bar>
+    <ion-content>
+      <div ng-show="otp">
+        <section class="container">
+          <div class="progress">
+            <div class="progress-bar" ng-style="{width: time + '%'}"></div>
+          </div>
+        </section>
+        <div class="card">
+          <div class="item item-divider">
+            OTP Password
+          </div>
+          <div class="item center">
+            {{otp}}
+          </div>
+        </div>      
+      </div>
+      <div class="center" ng-hide="otp">
+        <i class="big icon ion-unlocked"></i>
+        <h3>
+          No `One Time Password` found use the <em>+</em> button to add one
+        </h3>
+      </div>
+    </ion-content>
+
+    <ion-footer-bar align-title="center" class="bar-dark">
+      <div class="title">
+        <button class="button button-clear icon ion-ios-plus-outline pull-right" ng-click="add()"></button>
+      </div>
+    </ion-footer-bar>
+  </ion-pane>
+</body>
+
+</html>

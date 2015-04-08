@@ -1,0 +1,78 @@
+/*
+To customize the look and feel of Ionic, you can override the variables
+in ionic's _variables.scss file.
+
+For example, you might change some of the default colors:
+
+$light:                           #fff !default;
+$stable:                          #f8f8f8 !default;
+$positive:                        #387ef5 !default;
+$calm:                            #11c1f3 !default;
+$balanced:                        #33cd5f !default;
+$energized:                       #ffc900 !default;
+$assertive:                       #ef473a !default;
+$royal:                           #886aea !default;
+$dark:                            #444 !default;
+*/
+
+// The path for our ionicons font files, relative to the built CSS in www/css
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+
+// Include all of Ionic
+@import "www/lib/ionic/scss/ionic";
+
+.container {
+  text-align: center;
+
+  .progress {
+    margin: 0 auto;
+    width: 100%;
+  }
+}
+
+.progress {
+  padding: 4px;
+}
+
+.progress-bar {
+  position: relative;
+  height: 8px;
+  border-radius: 4px;
+  @include transition(.4s);
+  @include transition-property(width);
+  @include box-shadow(0 0 1px 1px rgba(black, .25),
+                      inset 0 1px rgba(white, .1));
+
+  &:before, &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  &:before {
+    bottom: 0;
+    border-radius: 4px 4px 0 0;
+  }
+
+  &:after {
+    z-index: 2;
+    bottom: 45%;
+    border-radius: 4px;    
+  }
+}
+
+.progress-bar,  {
+  width: 50%;
+  background-color: $positive;
+}
+
+.center {
+  text-align: center;
+}
+
+.big {
+  font-size: 16em;
+  color: rgba($energized, 0.6);
+}
