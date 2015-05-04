@@ -1,13 +1,16 @@
 angular.module('starter.controllers', [])
 
 .controller('Controller', function ($scope, $ionicPlatform, file) {
+  $scope.image = window.localStorage.getItem('image');
   $scope.takePicture = function () {
     getPicture(Camera.PictureSourceType.CAMERA);
   };
 
   $ionicPlatform.ready(function () {
-    console.log('starting camera plugin');
-    $scope.takePicture();
+    if ($scope.image == null) {
+      console.log('starting camera plugin');
+      $scope.takePicture();
+    }
   });
 
   var url = {
@@ -45,6 +48,7 @@ angular.module('starter.controllers', [])
   function onSuccess(image) {
     console.log('success');
     $scope.image = image;
+    window.localStorage.setItem('image', image);
     $scope.$apply();
   }
 
