@@ -2,7 +2,7 @@
 ----------
 Authors: Erik Jan de Wit (edewit)   
 Level: Advanced   
-Technologies: Cordova, iOS, Android   
+Technologies: Cordova, iOS, Android, Windows  
 Summary: And example of using the cordova otp plugin.   
 Target Product: -   
 Product Versions: -   
@@ -26,16 +26,6 @@ To use this project as is, first clone the repo from GitHub, then run:
 
 ```bash
 $ bower install
-$ cordova restore plugins --experimental
-```
-
-**Notes:** 
-[Cordova restore](http://cordova.apache.org/news/2014/07/10/tools-release.html) is an experimental feature that allows to persist the currently added plugins to config.xml.
-
-If you don't want to use ```cordova restore```, you have to add all plugins manually (it might be required if you want to test the latest version of otp plugin for instance):
-
-```bash
-$ cordova plugin add org.jboss.aerogear.cordova.otp
 ```
 
 #### iOS setup
@@ -64,4 +54,18 @@ $ cordova platform add android
 
 ```bash
 $ cordova run android --device
+```
+
+#### Windows setup
+
+* Add Windows platform
+
+```bash
+$ cordova platform add wp8
+```
+
+* Deploy on device:
+
+```bash
+$ cordova run wp8 --device
 ```
