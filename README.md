@@ -49,7 +49,7 @@ Use cordova cli:
 
 - to add plugin (if needed)
 
-		cordova plugin add org.jboss.aerogear.cordova.push
+		cordova plugin add aerogear-cordova-push
 
 - to copy www content (if needed)
 
